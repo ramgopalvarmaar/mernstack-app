@@ -1,18 +1,15 @@
 import "../styles/App.css";
 
 import React, { Component } from "react";
-import Board from "./Board";
+import Base from "./Base"
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="Header">Organizer your links/notes</div>
-
-        <Board />
+      <div>
+        <Base/>
       </div>
     );
   }
 }
-
 export default App;
