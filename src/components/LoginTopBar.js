@@ -8,10 +8,6 @@ import Avatar from '@material-ui/core/Avatar';
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
-  },
-  large : {
-    width: theme.spacing(7),
-    height: theme.spacing(7),
   }
 }));
 
@@ -20,8 +16,7 @@ export default function ButtonAppBar() {
     <div>
       <AppBar position="fixed" color="inherit">
         <Toolbar>
-          <Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" 
-              className={useStyles.large} />
+          <Avatar alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png" />
           <Button>Login</Button>
         </Toolbar>
       </AppBar>

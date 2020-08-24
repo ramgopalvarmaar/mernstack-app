@@ -9,24 +9,11 @@ import Navigator from './Navigator';
 import Header from './Header';
 import TopTabs from "./TopTabs"
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Pentagram
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 let theme = createMuiTheme({
   palette: {
     primary: {
       light: '#63ccff',
-      main: '#009be5',
+      main: '#eaeff1',
       dark: '#006db3',
     },
   },
@@ -42,12 +29,12 @@ let theme = createMuiTheme({
   },
   props: {
     MuiTab: {
-      disableRipple: true,
+      disableRipple: false,
     },
   },
   mixins: {
     toolbar: {
-      minHeight: 48,
+      minHeight: 40,
     },
   },
 });
@@ -73,7 +60,7 @@ theme = {
     },
     MuiTabs: {
       root: {
-        marginLeft: theme.spacing(1),
+        marginLeft: theme.spacing(0),
       },
       indicator: {
         height: 3,
@@ -85,7 +72,6 @@ theme = {
     MuiTab: {
       root: {
         textTransform: 'none',
-        margin: '0 16px',
         minWidth: 0,
         padding: 0,
         [theme.breakpoints.up('md')]: {
@@ -119,14 +105,14 @@ theme = {
         color: 'inherit',
         marginRight: 0,
         '& svg': {
-          fontSize: 20,
+          fontSize: 40,
         },
       },
     },
     MuiAvatar: {
       root: {
-        width: 32,
-        height: 32,
+        width: 55,
+        height: 55,
       },
     },
   },
@@ -152,7 +138,6 @@ const styles = {
   },
   main: {
     flex: 1,
-
     background: '#eaeff1',
   },
   footer: {
@@ -203,5 +188,18 @@ function Paperbase(props) {
 Paperbase.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Pentagram
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 export default withStyles(styles)(Paperbase);

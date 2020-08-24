@@ -46,15 +46,15 @@ const styles = (theme) => ({
   itemCategory: {
     backgroundColor: '#232f3e',
     boxShadow: '0 -1px 0 #404854 inset',
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
+    paddingTop: 37,
+    paddingBottom: 37,
   },
   firebase: {
-    fontSize: 28,
+    fontSize: 26,
     color: theme.palette.common.white,
   },
   itemActiveItem: {
-    color: '#4fc3f7',
+    color: '#9AB39A',
   },
   itemPrimary: {
     fontSize: 'inherit',

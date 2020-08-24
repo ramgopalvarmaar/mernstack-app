@@ -3,7 +3,6 @@ import "../styles/Board.css";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-
 import List from "./List";
 import AddList from "./AddList";
 
@@ -58,6 +57,7 @@ class Board extends Component {
     const { addingList } = this.state;
 
     return (
+      
       <DragDropContext onDragEnd={this.handleDragEnd}>
         <Droppable droppableId="board" direction="horizontal" type="COLUMN">
           {(provided, _snapshot) => (

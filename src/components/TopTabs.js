@@ -50,6 +50,11 @@ const useStyles = makeStyles((theme) => ({
   },
   secondaryBar: {
     zIndex: 0,
+  },
+  selected: {
+    background: "#9AB39A",
+    color: "black",
+    textTransform: 'bold'
   }
 }));
 
@@ -65,6 +70,8 @@ export default function FullWidthTabs() {
     setValue(index);
   };
 
+  const classes = useStyles();
+
   return (
     <div>
       <AppBar component="div"
@@ -74,9 +81,13 @@ export default function FullWidthTabs() {
           value={value}
           onChange={handleChange}
           variant="fullWidth"
-          aria-label="full width tabs example">
-          <Tab label="Personal" {...a11yProps(0)} />
-          <Tab label="Work" {...a11yProps(1)} />
+          aria-label="full width tabs example"
+          classes={{
+            flexContainer: classes.flexContainer,
+            indicator: classes.indicator
+          }}>
+          <Tab classes={{selected: classes.selected}} label="Personal" {...a11yProps(0)} />
+          <Tab classes={{selected: classes.selected}} label="Work" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
