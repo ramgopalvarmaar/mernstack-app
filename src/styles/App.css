@@ -12,3 +12,26 @@
   font-size: 40px;
   font-weight: 200;
 }
+
+#Menu, .list-group-item{
+  background-color: black;
+  color: rgba(255, 255, 255, 0.7);
+  font-family:"Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.navLabel{
+  font-size: 20px;
+  margin-left: 50px;
+}
+
+
+.list-group-item-action:focus, .list-group-item-action:hover{
+  background-color: #0a243d;
+}
+
+.list-group-item.active{
+  z-index: 2;
+  color: #9AB39A;
+  background-color: black;
+  border-color: black;
+}
