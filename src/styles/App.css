@@ -44,6 +44,33 @@ body{
   
 }
 
+#col1{
+  background-color: #232f3e;
+  color: #fff;
+  font-size: 26px;
+  height: 112px;
+  text-align: left;
+  align-items: baseline;
+}
+#HeaderText{
+  position:absolute;                  
+  bottom:0;                          
+}
+#TabColumn{
+  height: 112px;
+  background-color: #eaeff1;
+  align-items: flex-end;
+}
+#Avatar{
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  background-color: #eaeff1;
+}
+#AvatarBtn{
+  border-color:  #eaeff1;;
+}
+
 .tab-pane.active { animation-name: fadeIn; animation-duration: 300ms; animation-timing-function: linear; }
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
