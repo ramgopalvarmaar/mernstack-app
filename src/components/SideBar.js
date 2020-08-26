@@ -7,7 +7,7 @@ import { Container,Col,Row, ListGroup, ListGroupItem} from 'reactstrap';
 class SideBar extends Component {
     render() {
         return (
-            <Container fluid >
+            <span>
                 <Col id="Menu" md="2">
                 <span class="navLabel">Pick your tool here</span>
                 <hr/>
@@ -50,7 +50,7 @@ class SideBar extends Component {
                     </Row>
                 </ListGroup>
                 </Col>
-            </Container>
+            </span>
         )
     }
 }

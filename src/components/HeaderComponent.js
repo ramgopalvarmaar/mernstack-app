@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col,Button } from 'reactstrap';
+import Tab from  './TabComponent';
 
 class Header extends Component {
     render() {
@@ -12,7 +13,9 @@ class Header extends Component {
                             <Col md={{ size: 1, offset: 11 }}><Button id ="AvatarBtn"outline color="secondary"><img id="Avatar" alt="Remy Sharp" src="https://www.w3schools.com/howto/img_avatar2.png"/></Button></Col>
                         </Row>
                         <Row>
-                            <Col></Col>
+                            <Col>
+                                <Tab />
+                            </Col>
                         </Row>
                     </Col>
                 </Row>
