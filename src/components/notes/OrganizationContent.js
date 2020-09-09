@@ -1,12 +1,15 @@
-import "../styles/Board.css";
-
-import React, { Component } from "react";
+import React, { useState,Component} from 'react';
 import { connect } from "react-redux";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import List from "./List";
-import AddList from "./AddList";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-class Board extends Component {
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import classnames from 'classnames';
+import List from "./List";
+import AddList from "./AddList";  
+
+class OrganizationContent extends Component {
   state = {
     addingList: false
   };
@@ -57,7 +60,6 @@ class Board extends Component {
     const { addingList } = this.state;
 
     return (
-      
       <DragDropContext onDragEnd={this.handleDragEnd}>
         <Droppable droppableId="board" direction="horizontal" type="COLUMN">
           {(provided, _snapshot) => (
@@ -68,7 +70,7 @@ class Board extends Component {
 
               {provided.placeholder}
 
-              <div className="Add-List">
+              <div className="Add-List" style={{visibility:"hidden"}}>
                 {addingList ? (
                   <AddList toggleAddingList={this.toggleAddingList} />
                 ) : (
@@ -90,4 +92,4 @@ class Board extends Component {
 
 const mapStateToProps = state => ({ board: state.board });
 
-export default connect(mapStateToProps)(Board);
+export default connect(mapStateToProps)(OrganizationContent);

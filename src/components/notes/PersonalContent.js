@@ -44,10 +44,7 @@ function PersonalContent(props) {
 
   return (
     <div className={classes.contentWrapper}>
-        <Fab className={classes.fab} aria-label="add">
-          <AddIcon />
-        </Fab>
-        <h1> Your Personal Stuffs here</h1>
+      
         <Board />
       </div>
   );
