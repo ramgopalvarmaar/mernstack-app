@@ -1,4 +1,4 @@
-import "../styles/List.css";
+import "../../styles/List.css";
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
@@ -79,7 +79,7 @@ class List extends Component {
                 handleChangeTitle={this.handleChangeTitle}
                 saveList={this.editListTitle}
                 onClickOutside={this.editListTitle}
-                deleteList={this.deleteList}
+               
               />
             ) : (
               <div className="List-Title" onClick={this.toggleEditingTitle}>

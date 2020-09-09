@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
+import PersonalContent from "./notes/PersonalContent"
+import OrganizationContent from "./notes/OrganizationContent"
 
 const Tab = (props) => {
   const [activeTab, setActiveTab] = useState('1');
@@ -37,32 +39,12 @@ const Tab = (props) => {
           <Row>
             <Col sm="8">
               <h1>Your Personal Stuffs here</h1>
-            </Col>
-            <Col sm="4">
-            <Button><FontAwesomeIcon icon={faPlusCircle} size ="3x"/></Button>
-            </Col>
+            </Col>           
           </Row>
           <Row>
-          <Col sm="3">
-              <Card body>
-                <CardTitle>First List</CardTitle>
-                <CardText></CardText>
-                <Button >Add a Card</Button>
-              </Card>
-            </Col>
-            <Col sm="3">
-              <Card body>
-                <CardTitle>Second List</CardTitle>
-                <CardText></CardText>
-                <Button>Add a Card</Button>
-              </Card>
-            </Col>
-            <Col sm="3">
-              <Card body>
-                <CardTitle></CardTitle>
-                <Button >Add a List</Button>
-              </Card>
-            </Col>
+          <div style={{ width: "90%"}}>
+          <PersonalContent/>
+          </div>  
           </Row>
         </TabPane>
         <TabPane tabId="2">
@@ -72,26 +54,9 @@ const Tab = (props) => {
             </Col>
           </Row>
           <Row>
-          <Col sm="3">
-              <Card body>
-                <CardTitle>First List</CardTitle>
-                <CardText></CardText>
-                <Button>Add a Card</Button>
-              </Card>
-            </Col>
-            <Col sm="3">
-              <Card body>
-                <CardTitle>Second List</CardTitle>
-                <CardText></CardText>
-                <Button>Add a Card</Button>
-              </Card>
-            </Col>
-            <Col sm="3">
-              <Card body>
-                <CardTitle></CardTitle>
-                <Button>Add a List</Button>
-              </Card>
-            </Col>
+          <div style={{ width: "90%"}}>
+          <OrganizationContent/>
+          </div>
           </Row>
         </TabPane>
       </TabContent>
