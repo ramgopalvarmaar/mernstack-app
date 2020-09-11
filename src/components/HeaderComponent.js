@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Container, Row, Col,Button } from 'reactstrap';
 import Tab from  './TabComponent';
 
-class Header extends Component {
-    render() {
+function Header(props) {
         return (
             <Container fluid>
                 <Row>
@@ -14,7 +13,7 @@ class Header extends Component {
                         </Row>
                         <Row>
                             <Col>
-                                <Tab />
+                                <Tab activeMenu={props.menuItem}/>
                             </Col>
                         </Row>
                     </Col>
@@ -22,7 +21,6 @@ class Header extends Component {
 
             </Container>
         );
-    }
 }
 
 export default Header;
