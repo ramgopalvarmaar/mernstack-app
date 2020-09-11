@@ -6,6 +6,7 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import classnames from 'classnames';
 import PersonalContent from "./notes/PersonalContent"
 import OrganizationContent from "./notes/OrganizationContent"
+import Dictaphone from './voice-notes/Dictaphone';
 
 const Tab = (props) => {
   const [activeTab, setActiveTab] = useState('1');
@@ -48,7 +49,7 @@ const Tab = (props) => {
           <Row>
           <div style={{ width: "90%"}}>
           {activeMenu === "notes" && <PersonalContent/>}
-          {activeMenu === "voice-notes" && <h1> Personal Voice Notes here </h1>}
+          {activeMenu === "voice-notes" && <Dictaphone />}
           {activeMenu === "reminder" && <h1> Personal Reminders here </h1>}
           {activeMenu === "to-do" && <h1> Personal To-Do here </h1>}
           {activeMenu === "calendar" && <h1> Personal Calendar here </h1>}
@@ -65,7 +66,7 @@ const Tab = (props) => {
           <Row>
           <div style={{ width: "90%"}}>
           {activeMenu === "notes" && <OrganizationContent/>}
-          {activeMenu === "voice-notes" && <h1> Work Voice Notes here </h1>}
+          {activeMenu === "voice-notes" && <Dictaphone />}
           {activeMenu === "reminder" && <h1> Work Reminders here </h1>}
           {activeMenu === "to-do" && <h1> Work To-Do here </h1>}
           {activeMenu === "calendar" && <h1> Work Calendar here </h1>}

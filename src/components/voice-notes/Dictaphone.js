@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
-import { FormGroup, Label, Input, Spinner } from 'reactstrap';
+import { FormGroup, Label, Input, Spinner, Col, Row, Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button} from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMicrophone, faMicrophoneSlash } from '@fortawesome/free-solid-svg-icons';
 
-const Dictaphone = () => {
+const Dictaphone = (props) => {
   
   const [message, setMessage] = useState('')
+  const [newCard, setNewCard] = useState([]);
+
   const commands = [
     {
       command: 'I would like to order *',
@@ -40,22 +45,46 @@ const Dictaphone = () => {
     }
   ]
 
-  const { transcript } = useSpeechRecognition({ commands })
+  const { transcript, resetTranscript, listening} = useSpeechRecognition({ commands })
+
+  console.log("###############listening##########");
+  console.log(listening);
 
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return null
   }
 
+  function saveNotes(){
+    SpeechRecognition.abortListening();
+    console.log("noteText");
+    console.log({transcript});
+    setNewCard(newCard.concat(<NotesCard/>))
+  }
+
+  const NotesCard = () => {
+    return <Card body>
+              <CardTitle>Transcibed notes</CardTitle>
+              <CardText>{transcript}</CardText>
+              <Button>Share</Button>
+            </Card>;
+  };
+
   return (
     <div>
-      <button id="start" onClick={() => SpeechRecognition.startListening({ continuous: true })}>Start Listening</button>
-      <Spinner size="md" color="primary" />{' '}
-      <button id="stop" onClick={() => SpeechRecognition.abortListening()}>Stop Listening</button>
-      <FormGroup>
-        <Label for="exampleText">Recognized text</Label>
-        <Input type="textarea" name="text" id="exampleText" value={transcript}/>
-      </FormGroup>
-    </div> 
+      <Card style={{alignItems: 'center'}}>
+        {!listening && <FontAwesomeIcon style={{marginTop: '1%'}} color='red' onClick={() => SpeechRecognition.startListening({ continuous: true })} icon={faMicrophone} size ="4x"/>}
+        {listening && <FontAwesomeIcon style={{marginTop: '1%'}} color='red' onClick={() => SpeechRecognition.abortListening()} icon={faMicrophoneSlash} size ="4x"/>}
+        &nbsp;
+        {listening && <Spinner size="md" color="primary" />}
+        <CardBody>
+          <CardText>{transcript}</CardText>
+          <Button style={{marginLeft: '10px'}} onClick={() => saveNotes()}>Save</Button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <Button onClick={resetTranscript} style={{marginRight: '10px'}}>Discard</Button>
+        </CardBody>
+      </Card>
+      {newCard}
+    </div>
   )
 }
 export default Dictaphone
