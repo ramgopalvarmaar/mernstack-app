@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/team-collaborator/static/css/main.7724b860.chunk.css",
+    "main.js": "/team-collaborator/static/js/main.8d1ba64c.chunk.js",
+    "main.js.map": "/team-collaborator/static/js/main.8d1ba64c.chunk.js.map",
+    "runtime-main.js": "/team-collaborator/static/js/runtime-main.ef9baa9d.js",
+    "runtime-main.js.map": "/team-collaborator/static/js/runtime-main.ef9baa9d.js.map",
+    "static/js/2.c4b4094c.chunk.js": "/team-collaborator/static/js/2.c4b4094c.chunk.js",
+    "static/js/2.c4b4094c.chunk.js.map": "/team-collaborator/static/js/2.c4b4094c.chunk.js.map",
+    "index.html": "/team-collaborator/index.html",
+    "precache-manifest.ba85b107e937052e6b46e1b703ad4fa2.js": "/team-collaborator/precache-manifest.ba85b107e937052e6b46e1b703ad4fa2.js",
+    "service-worker.js": "/team-collaborator/service-worker.js",
+    "static/css/main.7724b860.chunk.css.map": "/team-collaborator/static/css/main.7724b860.chunk.css.map",
+    "static/js/2.c4b4094c.chunk.js.LICENSE.txt": "/team-collaborator/static/js/2.c4b4094c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef9baa9d.js",
+    "static/js/2.c4b4094c.chunk.js",
+    "static/css/main.7724b860.chunk.css",
+    "static/js/main.8d1ba64c.chunk.js"
+  ]
+}
