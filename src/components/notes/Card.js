@@ -9,7 +9,8 @@ import CardEditor from "./CardEditor";
 class Card extends Component {
   state = {
     hover: false,
-    editing: false
+    editing: false,
+    sharing:false,
   };
 
   startHover = () => this.setState({ hover: true });
@@ -19,6 +20,7 @@ class Card extends Component {
     this.setState({
       hover: false,
       editing: true,
+      sharing:false,
       text: this.props.card.text
     });
 
@@ -35,6 +37,16 @@ class Card extends Component {
     });
   };
 
+  endSharing = () => this.setState({ hover: true, sharing: false });
+
+  shareCard = async text => {  // We cac call Share API call here
+    const { card, dispatch } = this.props;
+    alert("card Id :"+card._id +" & "+"card Text :" +card.text )
+    this.endSharing();
+
+   
+  };
+
   deleteCard = async () => {
     const { listId, card, dispatch } = this.props;
 
@@ -44,11 +56,13 @@ class Card extends Component {
     });
   };
 
-  render() {
-    const { card, index } = this.props;
-    const { hover, editing } = this.state;
 
-    if (!editing) {
+  render() {
+  
+    const { card, index } = this.props;
+    const { hover, editing,sharing } = this.state;
+
+    if ((!editing && !sharing) ||(!editing && sharing)) {
       return (
         <Draggable draggableId={card._id} index={index}>
           {(provided, snapshot) => (
@@ -62,18 +76,27 @@ class Card extends Component {
             >
               {hover && (
                 <div className="Card-Icons">
+            
                   <div className="Card-Icon" onClick={this.startEditing}>
-                    <ion-icon name="create" />
+                    <ion-icon name="create" /> </div>
+                    <div className="Card-Icon" onClick={this.shareCard}  >
+                    <ion-icon ios="ios-share" md="md-share"></ion-icon>
+                 
                   </div>
+               
                 </div>
               )}
+      
 
               {card.text}
             </div>
           )}
         </Draggable>
       );
-    } else {
+     
+    } 
+     if(!sharing && editing)
+     {
       return (
         <CardEditor
           text={card.text}
@@ -83,7 +106,9 @@ class Card extends Component {
         />
       );
     }
+   
   }
+
 }
 
 const mapStateToProps = (state, ownProps) => ({
