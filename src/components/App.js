@@ -29,7 +29,6 @@ function App() {
       `Logged in successfully welcome ${res.profileObj.name} 😍. \n See console for full profile object.`
     );*/
     refreshTokenSetup(res);
-    toggle();
     store.dispatch({
       type: "USER_LOGIN",
       payload: {userEmail:res.profileObj.email,name:res.profileObj.name,imageUrl:res.profileObj.imageUrl}
@@ -39,9 +38,9 @@ function App() {
 
   const onFailure = (res) => {
     console.log('Login failed: res:', res);
-    alert(
+    /*alert(
       `Failed to login. 😢 Please ping this to repo owner twitter.com/sivanesh_fiz`
-    );
+    );*/
     
   };
 
