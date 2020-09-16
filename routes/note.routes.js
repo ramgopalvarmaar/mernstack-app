@@ -6,14 +6,17 @@ app.post('/team-collaborator/usernotes', notes.create);
 
 app.get('/notes', notes.findAll);
 
- // Retrieve a single Note with noteId
+app.get('/', (req, res) => {
+    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+});
+
+//Retrieve a single Note with noteId
 app.get('/notes/:noteId', notes.findOne);
 
-// Update a Note with noteId
-app.put('/notes/:noteId', notes.update);
+//Update a Note with noteId
+//app.put('/notes/:noteId', notes.update);
 
-// Delete a Note with noteId
+//Delete a Note with noteId
 app.delete('/notes/:noteId', notes.delete);
-
 
 }
