@@ -47,7 +47,7 @@ const Tab = (props) => {
             </Col>           
           </Row>
           <Row>
-          <div style={{ width: "90%"}}>
+          <div style={{ width: "100%"}}>
           {activeMenu === "notes" && <PersonalContent/>}
           {activeMenu === "voice-notes" && <Dictaphone />}
           {activeMenu === "reminder" && <h1> Personal Reminders here </h1>}
@@ -64,7 +64,7 @@ const Tab = (props) => {
             </Col>
           </Row>
           <Row>
-          <div style={{ width: "90%"}}>
+          <div style={{ width: "100%"}}>
           {activeMenu === "notes" && <OrganizationContent/>}
           {activeMenu === "voice-notes" && <Dictaphone />}
           {activeMenu === "reminder" && <h1> Work Reminders here </h1>}
