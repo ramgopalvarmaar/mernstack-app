@@ -6,6 +6,9 @@ const mongoose = require('mongoose');
 // create express app
 const app = express();
 
+var cors = require("cors");
+app.use(cors());
+
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 
